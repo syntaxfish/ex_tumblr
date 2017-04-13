@@ -51,6 +51,11 @@ defmodule ExTumblr.Blog do
     {:get, construct_url(blog_identifier, "posts"), :api_key_auth}
   end
 
+  @spec create_video_posts_request(String.t) :: base_request
+  def create_video_posts_request(blog_identifier) do
+    {:get, construct_url(blog_identifier, "posts/video"), :api_key_auth}
+  end
+
   @spec create_queued_posts_request(String.t) :: base_request
   def create_queued_posts_request(blog_identifier) do
     {:get, construct_url(blog_identifier, "posts/queue"), :oauth}
